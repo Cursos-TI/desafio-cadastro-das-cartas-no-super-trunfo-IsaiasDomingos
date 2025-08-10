@@ -46,7 +46,7 @@ int main() {
     printf("Qual o codigo da cidade? (ex: A01): ");
     scanf("%s", cod1); 
 
-    printf("Qual o nome da cidade?: ");
+    printf("Qual o nome da cidade?:(Inserir nome junto sem o espao )");
     scanf("%s", nome1);
 
     printf("Qual a populacao da cidade?: ");
@@ -69,7 +69,7 @@ int main() {
     printf("Qual o codigo da cidade? (ex: B02): ");
     scanf("%s", cod2); 
 
-    printf("Qual o nome da cidade?: ");
+    printf("Qual o nome da cidade?: (Inserir o nome junto sem o espaço) ");
     scanf("%s", nome2);
 
     printf("Qual a populacao da cidade?: ");

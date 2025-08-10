@@ -28,6 +28,8 @@ int main() {
     float pib2, area2;
     char estado2;
 
+    //variaveis declaradas
+    //Estado=estado, código da cidade=cod, nome=nome, população=populacao, área=area, PIB=pib, número de pontos turísticos=turism
      
     // Cadastro das Cartas:
     // Sugestão: Utilize a função scanf para capturar as entradas do usuário para cada atributo.

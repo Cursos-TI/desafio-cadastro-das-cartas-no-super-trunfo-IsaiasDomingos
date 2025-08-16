@@ -31,12 +31,25 @@ int main() {
     //variaveis declaradas
     //Estado=estado, código da cidade=cod, nome=nome, população=populacao, área=area, PIB=pib, número de pontos turísticos=turism
      
+
+    // Desafio: nível AVENTUREIRO:
+    //Calculando Densidade Populacional=Divida a população da cidade pela sua área 
+    //PIB per Capita=Divida o PIB da cidade pela sua população
+
+    //Variaveis para a primeira carta
+    float densidadepop1, pibcap1;
+    //Variaveis para a segunda carta
+    float densidadepop2, pibcap2;
+
+    //Variaveis declaradas
+    //densidadepop=Densidade Populacional, pibcap=PIB per Capita
+    
     // Cadastro das Cartas:
     // Sugestão: Utilize a função scanf para capturar as entradas do usuário para cada atributo.
     // Solicite ao usuário que insira as informações de cada cidade, como o código, nome, população, área, etc.
     
       
-    printf("\nBem-vindo(a) ao Jogo Super Trunfo:\n");
+    printf("\n***Bem-vindo(a) ao Jogo Super Trunfo:***\n");
 
     // Cadastro da primeira carta
     printf("Insira os dados da primeira carta:\n");
@@ -52,7 +65,7 @@ int main() {
     printf("Qual a populacao da cidade?: ");
     scanf("%d", &populacao1);
 
-    printf("Qual o Tamanho da cidade? ");
+    printf("Qual a área da cidade? (em km²) ");
     scanf("%f", &area1);
 
     printf("Qual e o PIB da cidade? ");
@@ -61,7 +74,13 @@ int main() {
     printf("Quantos pontos turisticos tem a cidade? ");
     scanf("%d", &turismo1);
 
+    // primeira carta AVENTUREIRO-Calculando Densidade Populacional (densidadepop) e PIB per Capita (pibcap)
+    
+    densidadepop1 = populacao1 / area1;
+    pibcap1 = pib1 / populacao1;
+
     // Cadastro da segunda carta
+
     printf("\nInsira os dados da segunda carta:\n");
     printf("Qual o Estado? (Uma letra de 'A' a 'H'): ");
     scanf(" %c", &estado2);
@@ -75,7 +94,7 @@ int main() {
     printf("Qual a populacao da cidade?: ");
     scanf("%d", &populacao2);
 
-    printf("Qual o Tamanho da cidade? ");
+    printf("Qual a área da cidade? (em km²) ");
     scanf("%f", &area2);
 
     printf("Qual e o PIB da cidade? ");
@@ -83,12 +102,18 @@ int main() {
 
     printf("Quantos pontos turisticos tem a cidade? ");
     scanf("%d", &turismo2);
+    
+    // Exibicao da primeira carta AVENTUREIRO -Calculando Densidade Populacional (densidadepop) e PIB per Capita (pibcap)
+
+    densidadepop2 = populacao2 / area2;
+    pibcap2 = pib2 / populacao2;
+
 
     // Exibição dos Dados das Cartas:
     // Sugestão: Utilize a função printf para exibir as informações das cartas cadastradas de forma clara e organizada.
     // Exiba os valores inseridos para cada atributo da cidade, um por linha.
 
-    // Exibicao da primeira carta
+    // Exibicao da primeira carta NOVATO
     printf("\nCARTA 1:\n");
     printf("Estado: %c\n", estado1);
     printf("Codigo da cidade: %s\n", cod1);
@@ -98,7 +123,11 @@ int main() {
     printf("O Produto Interno Bruto da cidade é: %.2f\n", pib1); 
     printf("Numero de Pontos Turisticos: %d\n", turismo1);
 
-    // Exibicao da segunda carta
+    // Exibicao da primeira carta AVENTUREIRO
+    printf("Densidade Populacional: %.2f hab/km²\n", densidadepop1);
+    printf("PIB per Capita: %.2f reais\n", pibcap1);
+    
+    // Exibicao da segunda carta NOVATO
     printf("\nCARTA 2:\n");
     printf("Estado: %c\n", estado2); 
     printf("Codigo da cidade: %s\n", cod2);
@@ -106,7 +135,13 @@ int main() {
     printf("Populacao: %d\n", populacao2);
     printf("Area: %.2f km²\n", area2); 
     printf("O Produto Interno Bruto da cidade é: %.2f\n", pib2);
-    printf("Numero de Pontos Turisticos: %d\n", turismo2);
+    printf("Numero de Pontos Turisticos: %2d\n", turismo2);
+    
+    // Exibicao da segunda carta AVENTUREIRO
+    printf("Densidade Populacional: %.2f hab/km²\n", densidadepop2);
+    printf("PIB per Capita: %.2f reais\n", pibcap2);
+
+     
 
     return 0;
 }

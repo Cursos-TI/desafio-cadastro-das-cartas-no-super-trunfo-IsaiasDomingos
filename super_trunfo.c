@@ -115,6 +115,10 @@ int main() {
     superpoder1 = (float)populacao1 + area1 + pib1 + (float)turismo1 + pibcap1 + (1 / densidadepop1);
     superpoder2 = (float)populacao2 + area2 + pib2 + (float)turismo2 + pibcap2 + (1 / densidadepop2);
      
+<<<<<<< HEAD
+=======
+    // comparando as cartaS
+>>>>>>> d365ae3677e3d0820fe400d2949eaf02a5b9b372
 
     // Exibicao 
 

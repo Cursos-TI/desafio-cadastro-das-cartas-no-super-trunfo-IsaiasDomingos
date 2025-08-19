@@ -15,14 +15,16 @@ int main() {
     // Exemplos de atributos: Estado, código  da cidade , nome, população, área, PIB, número de pontos turísticos.
 
     // Variaveis para a primeira carta
-    int populacao1, turismo1;
+    unsigned long int populacao1; 
+    int turismo1;
     char nome1[50];
     char cod1[4]; 
     float pib1, area1;
     char estado1;
 
     // Variaveis para a segunda carta
-    int populacao2, turismo2;
+    unsigned long int populacao2;
+    int turismo2;
     char nome2[50];
     char cod2[4]; 
     float pib2, area2;
@@ -63,7 +65,7 @@ int main() {
     scanf("%s", nome1);
 
     printf("Qual a populacao da cidade?: ");
-    scanf("%d", &populacao1);
+    scanf("%lu", &populacao1);
 
     printf("Qual a área da cidade? (em km²) ");
     scanf("%f", &area1);
@@ -74,8 +76,6 @@ int main() {
     printf("Quantos pontos turisticos tem a cidade? ");
     scanf("%d", &turismo1);
 
-    // primeira carta AVENTUREIRO-Calculando Densidade Populacional (densidadepop) e PIB per Capita (pibcap)
-    
     densidadepop1 = populacao1 / area1;
     pibcap1 = pib1 / populacao1;
 
@@ -92,7 +92,7 @@ int main() {
     scanf("%s", nome2);
 
     printf("Qual a populacao da cidade?: ");
-    scanf("%d", &populacao2);
+    scanf("%lu", &populacao2);
 
     printf("Qual a área da cidade? (em km²) ");
     scanf("%f", &area2);
@@ -103,45 +103,34 @@ int main() {
     printf("Quantos pontos turisticos tem a cidade? ");
     scanf("%d", &turismo2);
     
-    // Exibicao da primeira carta AVENTUREIRO -Calculando Densidade Populacional (densidadepop) e PIB per Capita (pibcap)
 
     densidadepop2 = populacao2 / area2;
     pibcap2 = pib2 / populacao2;
+ 
+    // Desafio: nível MESTRE:
+    // Calcular o Super Poder, Comparar as Cartas, Exibir os Resultados das Comparações
 
-
-    // Exibição dos Dados das Cartas:
-    // Sugestão: Utilize a função printf para exibir as informações das cartas cadastradas de forma clara e organizada.
-    // Exiba os valores inseridos para cada atributo da cidade, um por linha.
-
-    // Exibicao da primeira carta NOVATO
-    printf("\nCARTA 1:\n");
-    printf("Estado: %c\n", estado1);
-    printf("Codigo da cidade: %s\n", cod1);
-    printf("Nome da cidade: %s\n", nome1);
-    printf("Populacao: %d\n", populacao1);
-    printf("Area: %.2f km²\n", area1); 
-    printf("O Produto Interno Bruto da cidade é: %.2f\n", pib1); 
-    printf("Numero de Pontos Turisticos: %d\n", turismo1);
-
-    // Exibicao da primeira carta AVENTUREIRO
-    printf("Densidade Populacional: %.2f hab/km²\n", densidadepop1);
-    printf("PIB per Capita: %.2f reais\n", pibcap1);
-    
-    // Exibicao da segunda carta NOVATO
-    printf("\nCARTA 2:\n");
-    printf("Estado: %c\n", estado2); 
-    printf("Codigo da cidade: %s\n", cod2);
-    printf("Nome da cidade: %s\n", nome2);
-    printf("Populacao: %d\n", populacao2);
-    printf("Area: %.2f km²\n", area2); 
-    printf("O Produto Interno Bruto da cidade é: %.2f\n", pib2);
-    printf("Numero de Pontos Turisticos: %2d\n", turismo2);
-    
-    // Exibicao da segunda carta AVENTUREIRO
-    printf("Densidade Populacional: %.2f hab/km²\n", densidadepop2);
-    printf("PIB per Capita: %.2f reais\n", pibcap2);
-
+    float superpoder1, superpoder2;
+   
+    superpoder1 = (float)populacao1 + area1 + pib1 + (float)turismo1 + pibcap1 + (1 / densidadepop1);
+    superpoder2 = (float)populacao2 + area2 + pib2 + (float)turismo2 + pibcap2 + (1 / densidadepop2);
      
+    // comparando as cartaS
+
+    // Exibicao 
+
+    printf("\n ***Comparação de Cartas:***\n");
+    printf("\n Resultado: \n");
+    printf ("1 = Carta 1 vence\n");
+    printf("0 = Carta 2 vence \n");
+    printf("\nPopulação: %d\n", populacao1 > populacao2);
+    printf("Área: %d\n", area1 > area2); 
+    printf("PIB: %d\n", pib1 > pib2);
+    printf("Pontos Turísticos: %d\n", turismo1 > turismo2);
+    printf("Densidade Populacional: %d\n", densidadepop1 < densidadepop2);
+    printf("PIB per Capita: %d\n", pibcap1 > pibcap2);
+    printf("Super Poder: %d\n", superpoder1 > superpoder2);
+   
 
     return 0;
 }
